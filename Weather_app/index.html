@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather app</title>
+</head>
+
+<!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+
+<body>
+<div class="flex justify-center items-center overflow-hidden flex-col min-h-screen bg-blue-950">
+    <h1 class="text-white text-5xl mb-20 font-semibold">Let's check Weather</h1>
+    <div
+        class="container relative w-[400px] bg-gradient-to-r from-sky-400 to-indigo-500 p-5 rounded-2xl text-white">
+
+        <div class="search-box relative w-full h-12 flex items-center">
+            <i class="bx bxs-map absolute left-[10px] text-[25px] text-white"></i>
+            <input type="text"
+                class="absolute w-full h-full bg-transparent border-2 border-slate-500 px-12 outline-none rounded-xl text-[21px] text-white font-medium capitalize"
+                placeholder="Enter your location">
+            <button
+                class="bx bx-search absolute right-0 w-10 h-full bg-transparent border-none outline-none text-[25px] text-white pl-[5px] pr-10 py-0"></button>
+        </div>
+
+        <p class="city-hide hidden">city Hide</p>
+
+
+        <div class="weather-box text-center my-[40px] mx-0">
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <img src="./images/cloud.png" alt="cloud" class="w-[60%] m-auto">
+                        <p class="temp relative text-6xl font-semibold mt-5 mr-0 mb-[6px] ml-[-30px]">0<span
+                                class="absolute text-2xl ml-1">°C</span></p>
+                        <p class="desc capitalize text-[22px] font-medium">Broken clouds</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wea-details absolute bottom-10 left-0 w-full px-5 flex">
+
+            <div class="humidity flex items-center w-[50%] pl-5 justify-start">
+                <i class="bx bx-water text-[40px] mr-[10px]"></i>
+                <div class="text">
+                    <div class="info-humidity">
+                        <span class="inline-block text-[22px] font-medium">0%</span>
+                    </div> 
+                    <p class="font-medium text-base">Humidity</p>
+                </div>
+            </div>
+
+            <div class="wind flex items-center w-[50%] pr-5 justify-end">
+                <i class="bx bx-wind text-[40px] mr-[10px]"></i>
+                <div class="text">
+                    <div class="info-wind">
+                        <span class="inline-block text-[22px] font-medium">0Km/h</span>
+                    </div>
+                    <p class="font-medium text-base">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found absolute top-0 left-0 w-full text-center mt-[110px]">
+            <div class="box">
+                <img src="./images/404.png" class="w-[60%] mx-auto">
+                <p class="mt-3 font-medium text-[22px]">Oops! location not found!</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
